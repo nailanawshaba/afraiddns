@@ -1,0 +1,6 @@
+#!/bin/bash
+
+apikeyfile="/etc/afraiddns/apikey"
+
+echo Updating Afraid.org DNS
+curl -sk "https://freedns.afraid.org/dynamic/update.php?$(<$apikeyfile)"

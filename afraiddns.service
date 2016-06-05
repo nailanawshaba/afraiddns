@@ -1,0 +1,10 @@
+[Unit]
+Description=Afraid.org DNS update
+Requires=network.target
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/afraiddns
+
+[Install]
+WantedBy=multi-user.target
