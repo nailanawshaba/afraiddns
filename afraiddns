@@ -8,4 +8,6 @@
 apikeyfile="/etc/afraiddns/apikey"
 
 echo Updating Afraid.org DNS
-curl -sk "https://freedns.afraid.org/dynamic/update.php?$(<$apikeyfile)"
+while read line; do
+	curl -s "https://freedns.afraid.org/dynamic/update.php?${line}"
+done <"$apikeyfile"
